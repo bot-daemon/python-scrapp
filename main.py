@@ -16,18 +16,21 @@ def scrape_data():
     
     description_tag = soup.find('meta', attrs={"name": "description"})
     description = description_tag.get('content') if description_tag else "No description found"
+    print(title)
+    print(description)
     
     repositories = []
     repo_elements = soup.find_all('a', attrs={"itemprop": "name codeRepository"})
     for repo in repo_elements:
         repositories.append(repo.get('href'))  
+        print(repo.get('href'))
 
     data = {
         "title": title,
         "description": description,
         "repositories": repositories
     }
-
+    
     with open('data.json', 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
