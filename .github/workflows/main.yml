@@ -2,7 +2,7 @@ name: Update JSON with Web Scraping
 
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
   push:
     branches:
