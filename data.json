@@ -2,9 +2,9 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "the rebel path. lukilme has 11 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/hbase-project",
         "/lukilme/punching-bag-questions",
         "/lukilme/lukilme",
-        "/lukilme/hbase-project",
         "/lukilme/hcia-big-data-training",
         "/lukilme/iron-throne",
         "/lukilme/search-telemetry-service-estimation",
