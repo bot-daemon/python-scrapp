@@ -1,15 +1,14 @@
 {
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
-    "description": "lukilme has 9 repositories available. Follow their code on GitHub.",
+    "description": "lukilme has 8 repositories available. Follow their code on GitHub.",
     "repositories": [
-        "/lukilme/big-data-training",
+        "/lukilme/final-pweb-study-and-sync",
+        "/lukilme/bigdata-cluster",
         "/lukilme/generic-framework-python",
         "/lukilme/iron-throne",
         "/lukilme/lukilme",
         "/lukilme/search-telemetry-service-estimation",
-        "/lukilme/design-patterns-studies",
         "/lukilme/python-chess-logger",
-        "/lukilme/final-pweb-study-and-sync",
         "/lukilme/pob-artistryhub"
     ]
 }
