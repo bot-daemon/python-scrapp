@@ -1,12 +1,11 @@
 {
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
-    "description": "lukilme has 7 repositories available. Follow their code on GitHub.",
+    "description": "lukilme has 6 repositories available. Follow their code on GitHub.",
     "repositories": [
         "/lukilme/big-data-analysis-cluster",
         "/lukilme/docker-manager",
         "/lukilme/python-chess-logger",
         "/lukilme/generic-framework-python",
-        "/lukilme/lukilme",
         "/lukilme/search-telemetry-service-estimation",
         "/lukilme/pob-artistryhub"
     ]
