@@ -2,6 +2,7 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 13 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/search-telemetry-service-estimation",
         "/lukilme/wokwi-projects",
         "/lukilme/general-machine-learning-studies",
         "/lukilme/apache-spark-analysis-study",
@@ -13,7 +14,6 @@
         "/lukilme/docker-manager",
         "/lukilme/python-chess-logger",
         "/lukilme/generic-framework-python",
-        "/lukilme/search-telemetry-service-estimation",
         "/lukilme/pob-artistryhub"
     ]
 }
