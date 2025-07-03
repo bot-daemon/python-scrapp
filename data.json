@@ -3,8 +3,8 @@
     "description": "lukilme has 9 repositories available. Follow their code on GitHub.",
     "repositories": [
         "/lukilme/docker_open5gs",
-        "/lukilme/search-telemetry-service-estimation",
         "/lukilme/lukilme",
+        "/lukilme/search-telemetry-service-estimation",
         "/lukilme/general-machine-learning-studies",
         "/lukilme/big-data-analysis-cluster",
         "/lukilme/final-pweb-study-and-sync",
