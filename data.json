@@ -2,10 +2,10 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 10 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/lukilme",
+        "/lukilme/docker_open5gs",
         "/lukilme/search-telemetry-service-estimation",
         "/lukilme/blog",
-        "/lukilme/docker_open5gs",
-        "/lukilme/lukilme",
         "/lukilme/general-machine-learning-studies",
         "/lukilme/big-data-analysis-cluster",
         "/lukilme/final-pweb-study-and-sync",
