@@ -1,7 +1,9 @@
 {
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
-    "description": "lukilme has 10 repositories available. Follow their code on GitHub.",
+    "description": "lukilme has 12 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/agent-llm-for-telemetry",
+        "/lukilme/the-rustification",
         "/lukilme/docker_open5gs",
         "/lukilme/lukilme",
         "/lukilme/search-telemetry-service-estimation",
