@@ -1,7 +1,8 @@
 {
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
-    "description": "lukilme has 9 repositories available. Follow their code on GitHub.",
+    "description": "lukilme has 10 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/be-bee-project",
         "/lukilme/spendwise-spring-boot",
         "/lukilme/agent-llm-for-telemetry",
         "/lukilme/lukilme",
