@@ -2,8 +2,8 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 11 repositories available. Follow their code on GitHub.",
     "repositories": [
-        "/lukilme/big-data-cluster-solution",
         "/lukilme/lukilme",
+        "/lukilme/big-data-cluster-solution",
         "/lukilme/spendwise-spring-boot",
         "/lukilme/be-bee-project",
         "/lukilme/agent-llm-for-telemetry",
