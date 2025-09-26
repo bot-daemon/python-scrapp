@@ -2,8 +2,8 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 5 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/go-classroom",
         "/lukilme/django-classroom",
-        "/lukilme/lukilme",
         "/lukilme/big-data-analysis-cluster",
         "/lukilme/python-chess-logger",
         "/lukilme/pob-artistryhub"
