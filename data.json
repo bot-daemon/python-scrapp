@@ -2,8 +2,8 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 7 repositories available. Follow their code on GitHub.",
     "repositories": [
-        "/lukilme/nasa-space-apps-backend",
         "/lukilme/nasa-space-apps-frontend",
+        "/lukilme/nasa-space-apps-backend",
         "/lukilme/go-classroom",
         "/lukilme/django-classroom",
         "/lukilme/big-data-analysis-cluster",
