@@ -1,7 +1,8 @@
 {
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
-    "description": "lukilme has 5 repositories available. Follow their code on GitHub.",
+    "description": "lukilme has 6 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/lukilme",
         "/lukilme/go-classroom",
         "/lukilme/django-classroom",
         "/lukilme/big-data-analysis-cluster",
