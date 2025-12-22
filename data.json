@@ -1,7 +1,8 @@
 {
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
-    "description": "lukilme has 11 repositories available. Follow their code on GitHub.",
+    "description": "lukilme has 12 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/lukilme",
         "/lukilme/rust-dynamo-integration",
         "/lukilme/gRPC-project",
         "/lukilme/extractor-web-crawler",
