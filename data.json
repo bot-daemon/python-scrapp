@@ -2,8 +2,8 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 12 repositories available. Follow their code on GitHub.",
     "repositories": [
-        "/lukilme/rust-dynamo-integration",
         "/lukilme/extractor-web-crawler",
+        "/lukilme/rust-dynamo-integration",
         "/lukilme/lukilme",
         "/lukilme/gRPC-project",
         "/lukilme/rpc-project-go",
