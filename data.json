@@ -2,11 +2,11 @@
     "title": "lukilme (lukilme) / Repositories \u00b7 GitHub",
     "description": "lukilme has 13 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/gRPC-project",
         "/lukilme/extractor-web-crawler",
         "/lukilme/flutter-rest-and-graphql",
         "/lukilme/rust-dynamo-integration",
         "/lukilme/lukilme",
-        "/lukilme/gRPC-project",
         "/lukilme/rpc-project-go",
         "/lukilme/report-generator",
         "/lukilme/lamp-stack-example",
