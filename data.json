@@ -2,6 +2,7 @@
     "title": "lukilme (Luis Kilmer) / Repositories \u00b7 GitHub",
     "description": "lukilme has 17 repositories available. Follow their code on GitHub.",
     "repositories": [
+        "/lukilme/lukilme",
         "/lukilme/dynamic-gif-generator-terminal-style",
         "/lukilme/bubble-music-mirror",
         "/lukilme/k-system",
@@ -10,7 +11,6 @@
         "/lukilme/extractor-web-crawler",
         "/lukilme/flutter-rest-and-graphql",
         "/lukilme/rust-dynamo-integration",
-        "/lukilme/lukilme",
         "/lukilme/rpc-project-go",
         "/lukilme/report-generator",
         "/lukilme/lamp-stack-example",
