@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 17,
-    "total_code_bytes_all_repos": 611967,
+    "total_code_bytes_all_repos": 626857,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -168,8 +168,12 @@
             "name": "rust-dynamo-integration",
             "description": "Studies of integration testing with Rust in a REST service context and DynamoDB - AWS document storage service.",
             "created_at": "2025-12-21T01:06:46Z",
-            "total_code_bytes": 0,
-            "languages_percent": {}
+            "total_code_bytes": 14890,
+            "languages_percent": {
+                "Rust": 95.18,
+                "Dockerfile": 3.78,
+                "Shell": 1.04
+            }
         }
     ]
 }
