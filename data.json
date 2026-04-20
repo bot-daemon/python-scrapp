@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 17,
-    "total_code_bytes_all_repos": 630000,
+    "total_repositories": 18,
+    "total_code_bytes_all_repos": 629739,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -16,15 +16,6 @@
                 "Dockerfile": 6.83,
                 "Perl": 1.05,
                 "INI": 0.66
-            }
-        },
-        {
-            "name": "bubble-music-mirror",
-            "description": "It consists of an audio and video input interceptor, where both are dynamically merged and, through some filters, a \"visual show\" is created.",
-            "created_at": "2026-02-23T13:16:07Z",
-            "total_code_bytes": 261,
-            "languages_percent": {
-                "Python": 100.0
             }
         },
         {
@@ -105,6 +96,13 @@
             }
         },
         {
+            "name": "music-mirror",
+            "description": " It consists of an audio and video input interceptor, where both are dynamically merged and, through some filters, a \"visual show\" is created. ",
+            "created_at": "2026-04-20T00:25:27Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
             "name": "pob-artistryhub",
             "description": "project carried out for the object persistence course using the java language. The general idea being to create an information system, with the theme 'Presentation of artist'",
             "created_at": "2024-07-02T21:12:14Z",
@@ -118,6 +116,13 @@
             "name": "portfolio-website",
             "description": "",
             "created_at": "2026-02-09T22:21:48Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
+            "name": "pulsecore-showcase",
+            "description": "A full-stack web platform with Vue.js 3 + TypeScript + Vite on the frontend and Flask + Python on the backend, organized for modern development, testing, and deployment with containers.",
+            "created_at": "2026-04-20T00:50:15Z",
             "total_code_bytes": 0,
             "languages_percent": {}
         },
