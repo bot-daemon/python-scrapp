@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 17,
-    "total_code_bytes_all_repos": 626857,
+    "total_repositories": 18,
+    "total_code_bytes_all_repos": 629739,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -16,15 +16,6 @@
                 "Dockerfile": 6.83,
                 "Perl": 1.05,
                 "INI": 0.66
-            }
-        },
-        {
-            "name": "bubble-music-mirror",
-            "description": "It consists of an audio and video input interceptor, where both are dynamically merged and, through some filters, a \"visual show\" is created.",
-            "created_at": "2026-02-23T13:16:07Z",
-            "total_code_bytes": 261,
-            "languages_percent": {
-                "Python": 100.0
             }
         },
         {
@@ -78,24 +69,13 @@
             "name": "gRPC-project",
             "description": "Esta pr\u00e1tica consiste na implementa\u00e7\u00e3o em um projeto em Go que aplica o estilo arquitetural hexagonal para a implementa\u00e7\u00e3o de microsservi\u00e7os e gRPC para a comunica\u00e7\u00e3o entre servi\u00e7os",
             "created_at": "2025-12-08T21:21:47Z",
-            "total_code_bytes": 77044,
+            "total_code_bytes": 71677,
             "languages_percent": {
-                "Go": 94.95,
-                "Shell": 1.94,
-                "SQL": 1.48,
-                "Makefile": 1.33,
-                "Dockerfile": 0.29
-            }
-        },
-        {
-            "name": "k-system",
-            "description": "",
-            "created_at": "2026-02-13T14:40:32Z",
-            "total_code_bytes": 1996,
-            "languages_percent": {
-                "Python": 62.88,
-                "Dockerfile": 26.45,
-                "Shell": 10.67
+                "Go": 94.58,
+                "Shell": 2.09,
+                "SQL": 1.59,
+                "Makefile": 1.43,
+                "Dockerfile": 0.31
             }
         },
         {
@@ -116,6 +96,13 @@
             }
         },
         {
+            "name": "music-mirror",
+            "description": " It consists of an audio and video input interceptor, where both are dynamically merged and, through some filters, a \"visual show\" is created. ",
+            "created_at": "2026-04-20T00:25:27Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
             "name": "pob-artistryhub",
             "description": "project carried out for the object persistence course using the java language. The general idea being to create an information system, with the theme 'Presentation of artist'",
             "created_at": "2024-07-02T21:12:14Z",
@@ -129,6 +116,13 @@
             "name": "portfolio-website",
             "description": "",
             "created_at": "2026-02-09T22:21:48Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
+            "name": "pulsecore-showcase",
+            "description": "A full-stack web platform with Vue.js 3 + TypeScript + Vite on the frontend and Flask + Python on the backend, organized for modern development, testing, and deployment with containers.",
+            "created_at": "2026-04-20T00:50:15Z",
             "total_code_bytes": 0,
             "languages_percent": {}
         },
@@ -173,6 +167,15 @@
                 "Rust": 95.18,
                 "Dockerfile": 3.78,
                 "Shell": 1.04
+            }
+        },
+        {
+            "name": "special-topics-ifpb",
+            "description": "",
+            "created_at": "2026-04-08T15:36:15Z",
+            "total_code_bytes": 10506,
+            "languages_percent": {
+                "Python": 100.0
             }
         }
     ]
