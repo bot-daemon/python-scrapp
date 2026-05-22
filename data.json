@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 18,
-    "total_code_bytes_all_repos": 743458,
+    "total_code_bytes_all_repos": 735040,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -173,11 +173,11 @@
             "name": "special-topics-ifpb",
             "description": "This repository contains the projects, activities, and experiments for the special topics course. In this case, the topics are focused on the area of \u200b\u200bdata analysis.",
             "created_at": "2026-04-08T15:36:15Z",
-            "total_code_bytes": 124225,
+            "total_code_bytes": 115807,
             "languages_percent": {
-                "Jupyter Notebook": 64.23,
-                "Python": 34.3,
-                "PlantUML": 1.48
+                "Jupyter Notebook": 68.89,
+                "Python": 29.52,
+                "PlantUML": 1.59
             }
         }
     ]
