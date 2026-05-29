@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 19,
-    "total_code_bytes_all_repos": 921389,
+    "total_code_bytes_all_repos": 860069,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -184,14 +184,12 @@
             }
         },
         {
-            "name": "special-topics-ifpb",
-            "description": "This repository contains the projects, activities, and experiments for the special topics course. In this case, the topics are focused on the area of \u200b\u200bdata analysis.",
-            "created_at": "2026-04-08T15:36:15Z",
-            "total_code_bytes": 115807,
+            "name": "youtube-miner",
+            "description": "A Data Science Pipeline for Sustainable Collection, Exploratory Analysis, and Baseline Modeling on YouTube.",
+            "created_at": "2026-05-28T13:27:45Z",
+            "total_code_bytes": 54487,
             "languages_percent": {
-                "Jupyter Notebook": 68.89,
-                "Python": 29.52,
-                "PlantUML": 1.59
+                "Python": 100.0
             }
         }
     ]
