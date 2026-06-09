@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 11,
-    "total_code_bytes_all_repos": 1342098,
+    "total_repositories": 12,
+    "total_code_bytes_all_repos": 1505048,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -112,6 +112,19 @@
                 "Rust": 95.18,
                 "Dockerfile": 3.78,
                 "Shell": 1.04
+            }
+        },
+        {
+            "name": "Spotcharts",
+            "description": "",
+            "created_at": "2026-06-08T23:40:07Z",
+            "total_code_bytes": 162950,
+            "languages_percent": {
+                "JavaScript": 44.25,
+                "Python": 36.37,
+                "CSS": 11.85,
+                "HTML": 7.05,
+                "Dockerfile": 0.47
             }
         },
         {
