@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 13,
-    "total_code_bytes_all_repos": 2648169,
+    "total_repositories": 14,
+    "total_code_bytes_all_repos": 8729801,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -22,6 +22,13 @@
             "name": "dataframe_reporter",
             "description": "",
             "created_at": "2026-06-10T00:03:58Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
+            "name": "dataops-selection-process",
+            "description": "",
+            "created_at": "2026-06-14T01:16:08Z",
             "total_code_bytes": 0,
             "languages_percent": {}
         },
@@ -125,23 +132,23 @@
             "name": "Spotcharts",
             "description": "",
             "created_at": "2026-06-08T23:40:07Z",
-            "total_code_bytes": 162950,
+            "total_code_bytes": 187015,
             "languages_percent": {
-                "JavaScript": 44.25,
-                "Python": 36.37,
-                "CSS": 11.85,
-                "HTML": 7.05,
-                "Dockerfile": 0.47
+                "JavaScript": 50.07,
+                "Python": 33.03,
+                "CSS": 10.35,
+                "HTML": 6.15,
+                "Dockerfile": 0.41
             }
         },
         {
             "name": "youtube-miner",
             "description": "A Data Science Pipeline for Sustainable Collection, Exploratory Analysis, and Baseline Modeling on YouTube.",
             "created_at": "2026-05-28T13:27:45Z",
-            "total_code_bytes": 1725164,
+            "total_code_bytes": 7782731,
             "languages_percent": {
-                "Jupyter Notebook": 92.74,
-                "Python": 7.26
+                "Jupyter Notebook": 97.87,
+                "Python": 2.13
             }
         }
     ]
