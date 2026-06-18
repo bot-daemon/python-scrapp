@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 14,
-    "total_code_bytes_all_repos": 8729801,
+    "total_code_bytes_all_repos": 8731776,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -29,8 +29,12 @@
             "name": "dataops-selection-process",
             "description": "",
             "created_at": "2026-06-14T01:16:08Z",
-            "total_code_bytes": 0,
-            "languages_percent": {}
+            "total_code_bytes": 1975,
+            "languages_percent": {
+                "Python": 78.18,
+                "Go": 14.28,
+                "Dockerfile": 7.54
+            }
         },
         {
             "name": "dynamic-gif-generator-terminal-style",
