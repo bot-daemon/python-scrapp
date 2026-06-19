@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 14,
-    "total_code_bytes_all_repos": 8731776,
+    "total_repositories": 13,
+    "total_code_bytes_all_repos": 8729863,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -26,21 +26,10 @@
             "languages_percent": {}
         },
         {
-            "name": "dataops-selection-process",
-            "description": "",
-            "created_at": "2026-06-14T01:16:08Z",
-            "total_code_bytes": 1975,
-            "languages_percent": {
-                "Python": 78.18,
-                "Go": 14.28,
-                "Dockerfile": 7.54
-            }
-        },
-        {
             "name": "dynamic-gif-generator-terminal-style",
             "description": "Script to generate a dynamic GIF for the GitHub README.md file.",
             "created_at": "2026-02-22T23:43:05Z",
-            "total_code_bytes": 1832,
+            "total_code_bytes": 1894,
             "languages_percent": {
                 "Python": 100.0
             }
