@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 13,
-    "total_code_bytes_all_repos": 8729863,
+    "total_repositories": 15,
+    "total_code_bytes_all_repos": 1040332,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -91,6 +91,13 @@
             }
         },
         {
+            "name": "mirror-notes",
+            "description": "",
+            "created_at": "2026-06-22T12:22:40Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
             "name": "pob-artistryhub",
             "description": "project carried out for the object persistence course using the java language. The general idea being to create an information system, with the theme 'Presentation of artist'",
             "created_at": "2024-07-02T21:12:14Z",
@@ -138,11 +145,19 @@
             "name": "youtube-miner",
             "description": "A Data Science Pipeline for Sustainable Collection, Exploratory Analysis, and Baseline Modeling on YouTube.",
             "created_at": "2026-05-28T13:27:45Z",
-            "total_code_bytes": 7782731,
+            "total_code_bytes": 93200,
             "languages_percent": {
-                "Jupyter Notebook": 97.87,
-                "Python": 2.13
+                "Python": 88.06,
+                "Jupyter Notebook": 11.77,
+                "Shell": 0.17
             }
+        },
+        {
+            "name": "yt-miner",
+            "description": "",
+            "created_at": "2026-06-22T12:21:51Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
         }
     ]
 }
