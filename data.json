@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 15,
-    "total_code_bytes_all_repos": 1040332,
+    "total_code_bytes_all_repos": 1317134,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -84,18 +84,23 @@
             "name": "lukilme",
             "description": "Config files for my GitHub profile. It is also my portfolio and curriculum vitae",
             "created_at": "2024-06-05T23:39:27Z",
-            "total_code_bytes": 18034,
+            "total_code_bytes": 11275,
             "languages_percent": {
-                "CSS": 90.52,
-                "JavaScript": 9.48
+                "CSS": 67.39,
+                "JavaScript": 32.61
             }
         },
         {
             "name": "mirror-notes",
-            "description": "",
+            "description": "It consists of an audio and video input interceptor, where both are dynamically merged and, through some filters, a \"visual show\" is created. ",
             "created_at": "2026-06-22T12:22:40Z",
-            "total_code_bytes": 0,
-            "languages_percent": {}
+            "total_code_bytes": 27574,
+            "languages_percent": {
+                "C++": 86.6,
+                "CMake": 11.79,
+                "Makefile": 1.19,
+                "Shell": 0.42
+            }
         },
         {
             "name": "pob-artistryhub",
@@ -145,11 +150,11 @@
             "name": "youtube-miner",
             "description": "A Data Science Pipeline for Sustainable Collection, Exploratory Analysis, and Baseline Modeling on YouTube.",
             "created_at": "2026-05-28T13:27:45Z",
-            "total_code_bytes": 93200,
+            "total_code_bytes": 349187,
             "languages_percent": {
-                "Python": 88.06,
-                "Jupyter Notebook": 11.77,
-                "Shell": 0.17
+                "Jupyter Notebook": 74.88,
+                "Python": 25.07,
+                "Shell": 0.04
             }
         },
         {
