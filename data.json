@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 15,
-    "total_code_bytes_all_repos": 1342551,
+    "total_repositories": 13,
+    "total_code_bytes_all_repos": 1156202,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -44,20 +44,6 @@
                 "Python": 28.71,
                 "JavaScript": 0.4,
                 "Dockerfile": 0.39
-            }
-        },
-        {
-            "name": "fenix_wave",
-            "description": "WAVE",
-            "created_at": "2026-05-26T23:52:55Z",
-            "total_code_bytes": 186349,
-            "languages_percent": {
-                "Python": 63.18,
-                "HTML": 24.46,
-                "Shell": 6.72,
-                "JavaScript": 4.73,
-                "Dockerfile": 0.53,
-                "CSS": 0.38
             }
         },
         {
@@ -156,13 +142,6 @@
                 "Python": 24.82,
                 "Shell": 0.04
             }
-        },
-        {
-            "name": "yt-miner",
-            "description": "",
-            "created_at": "2026-06-22T12:21:51Z",
-            "total_code_bytes": 0,
-            "languages_percent": {}
         }
     ]
 }
