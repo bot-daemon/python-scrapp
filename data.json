@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 13,
-    "total_code_bytes_all_repos": 1207247,
+    "total_code_bytes_all_repos": 1207199,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -29,10 +29,10 @@
             "name": "dynamic-gif-generator-terminal-style",
             "description": "Script to generate a dynamic GIF for the GitHub README.md file.",
             "created_at": "2026-02-22T23:43:05Z",
-            "total_code_bytes": 38583,
+            "total_code_bytes": 38535,
             "languages_percent": {
-                "Python": 96.38,
-                "YAML": 3.62
+                "Python": 96.5,
+                "YAML": 3.5
             }
         },
         {
