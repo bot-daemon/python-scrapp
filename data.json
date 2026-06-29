@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 13,
-    "total_code_bytes_all_repos": 1207199,
+    "total_code_bytes_all_repos": 1464224,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -137,11 +137,11 @@
             "name": "youtube-miner",
             "description": "A Data Science Pipeline for Sustainable Collection, Exploratory Analysis, and Baseline Modeling on YouTube.",
             "created_at": "2026-05-28T13:27:45Z",
-            "total_code_bytes": 374604,
+            "total_code_bytes": 631629,
             "languages_percent": {
-                "Jupyter Notebook": 75.14,
-                "Python": 24.82,
-                "Shell": 0.04
+                "Jupyter Notebook": 75.88,
+                "Python": 24.1,
+                "Shell": 0.02
             }
         }
     ]
