@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de GIFs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#1a1a2e',
+                            800: '#16213e',
+                            700: '#0f3460',
+                        },
+                        accent: {
+                            DEFAULT: '#e94560',
+                            light: '#ff6b81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s ease-out;
+        }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-700 min-h-screen">
+    
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+        
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-accent mb-4 tracking-wider drop-shadow-lg">
+                Galeria de Visualizações
+            </h1>
+            <p class="text-gray-400 text-lg">Animações e gráficos interativos</p>
+            <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full opacity-50"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/all_langs_merged.gif', 'Linguagens Mescladas', '52 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/all_langs_merged.gif" 
+                         alt="Linguagens mescladas" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Linguagens Mescladas</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">52 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/total_bytes_gauge.gif', 'Medidor Total de Bytes', '48 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/total_bytes_gauge.gif" 
+                         alt="Medidor de bytes" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Medidor Total de Bytes</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/langs_radar.gif', 'Radar de Linguagens', '48 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/langs_radar.gif" 
+                         alt="Radar de linguagens" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Radar de Linguagens</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/bytes_line_v2.gif', 'Linha de Bytes (v2)', '48 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/bytes_line_v2.gif" 
+                         alt="Linha de bytes v2" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Linha de Bytes (v2)</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/repo_sizes_v2.gif', 'Tamanhos de Repositório (v2)', '48 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/repo_sizes_v2.gif" 
+                         alt="Tamanhos de repositório v2" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Tamanhos de Repositório (v2)</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/repo_sizes.gif', 'Tamanhos de Repositório', '44 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/repo_sizes.gif" 
+                         alt="Tamanhos de repositório" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Tamanhos de Repositório</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">44 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/language_pie.gif', 'Gráfico de Linguagens', '48 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/language_pie.gif" 
+                         alt="Gráfico de pizza" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Gráfico de Linguagens</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/stacked_langs.gif', 'Linguagens Empilhadas', '168 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/stacked_langs.gif" 
+                         alt="Linguagens empilhadas" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Linguagens Empilhadas</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">168 frames</span>
+                </div>
+            </div>
+            
+            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
+                 onclick="openModal('imgs/bytes_line.gif', 'Linha de Bytes', '48 frames')">
+                <div class="relative overflow-hidden rounded-xl mb-4">
+                    <img src="imgs/bytes_line.gif" 
+                         alt="Linha de bytes" 
+                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
+                         loading="lazy">
+                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
+                </div>
+                <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <span class="text-accent font-semibold text-sm truncate mr-2">Linha de Bytes</span>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="modal" 
+         class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 opacity-0 transition-opacity duration-300"
+         onclick="closeModal()">
+        
+        <div id="modal-content" 
+             class="relative max-w-5xl w-full bg-gradient-to-br from-gray-900 to-dark-800 rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform scale-90 transition-transform duration-300"
+             onclick="event.stopPropagation()">
+            
+            <div class="flex items-center justify-between p-4 md:p-6 border-b border-white/10">
+                <div>
+                    <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-accent"></h3>
+                    <p id="modal-frames" class="text-gray-400 text-sm mt-1"></p>
+                </div>
+                <button onclick="closeModal()" 
+                        class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
+                        aria-label="Fechar modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="p-4 md:p-6 flex items-center justify-center bg-black/30">
+                <img id="modal-image" 
+                     src="" 
+                     alt="" 
+                     class="max-w-full max-h-[70vh] rounded-xl shadow-lg">
+            </div>
+            
+            <div class="p-4 md:p-6 border-t border-white/10 flex justify-between items-center">
+                <span class="text-gray-400 text-sm">Clique fora da imagem para fechar</span>
+                <button onclick="closeModal()"
+                        class="bg-accent hover:bg-accent-light text-white px-6 py-2 rounded-full font-medium transition-colors duration-300">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/main.js">
+        
+    </script>
+    
+</body>
+</html>

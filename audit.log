@@ -1,0 +1,59 @@
+2026-07-12 09:55:05,438 | INFO | Starting collection | user=lukilme
+2026-07-12 09:55:05,438 | INFO | Requesting repositories | user=lukilme page=1
+2026-07-12 09:55:06,059 | INFO | Repositories fetched | count=13 page=1
+2026-07-12 09:55:06,061 | INFO | Processing repository | repo=big-data-analysis-cluster
+2026-07-12 09:55:06,062 | INFO | Fetching languages | repo=big-data-analysis-cluster
+2026-07-12 09:55:06,486 | INFO | Percentages calculated | languages=['HiveQL', 'Scala', 'Shell', 'XML', 'Dockerfile', 'Perl', 'INI']
+2026-07-12 09:55:06,487 | INFO | Total code calculated | total_bytes=67878
+2026-07-12 09:55:06,987 | INFO | Processing repository | repo=dataframe_reporter
+2026-07-12 09:55:06,987 | INFO | Fetching languages | repo=dataframe_reporter
+2026-07-12 09:55:07,388 | INFO | Repository with no languages detected
+2026-07-12 09:55:07,388 | INFO | Total code calculated | total_bytes=0
+2026-07-12 09:55:07,888 | INFO | Processing repository | repo=dynamic-gif-generator-terminal-style
+2026-07-12 09:55:07,889 | INFO | Fetching languages | repo=dynamic-gif-generator-terminal-style
+2026-07-12 09:55:08,294 | INFO | Percentages calculated | languages=['Python', 'YAML']
+2026-07-12 09:55:08,295 | INFO | Total code calculated | total_bytes=38535
+2026-07-12 09:55:08,795 | INFO | Processing repository | repo=extractor-web-crawler
+2026-07-12 09:55:08,796 | INFO | Fetching languages | repo=extractor-web-crawler
+2026-07-12 09:55:09,210 | INFO | Percentages calculated | languages=['HTML', 'Python', 'JavaScript', 'Dockerfile']
+2026-07-12 09:55:09,210 | INFO | Total code calculated | total_bytes=291343
+2026-07-12 09:55:09,710 | INFO | Processing repository | repo=gRPC-project
+2026-07-12 09:55:09,711 | INFO | Fetching languages | repo=gRPC-project
+2026-07-12 09:55:10,110 | INFO | Percentages calculated | languages=['Go', 'Shell', 'SQL', 'Makefile', 'Dockerfile']
+2026-07-12 09:55:10,110 | INFO | Total code calculated | total_bytes=71677
+2026-07-12 09:55:10,611 | INFO | Processing repository | repo=lamp-stack-example
+2026-07-12 09:55:10,611 | INFO | Fetching languages | repo=lamp-stack-example
+2026-07-12 09:55:11,032 | INFO | Repository with no languages detected
+2026-07-12 09:55:11,032 | INFO | Total code calculated | total_bytes=0
+2026-07-12 09:55:11,533 | INFO | Processing repository | repo=lukilme
+2026-07-12 09:55:11,533 | INFO | Fetching languages | repo=lukilme
+2026-07-12 09:55:11,939 | INFO | Percentages calculated | languages=['CSS', 'JavaScript']
+2026-07-12 09:55:11,940 | INFO | Total code calculated | total_bytes=11275
+2026-07-12 09:55:12,440 | INFO | Processing repository | repo=mirror-notes
+2026-07-12 09:55:12,440 | INFO | Fetching languages | repo=mirror-notes
+2026-07-12 09:55:12,839 | INFO | Percentages calculated | languages=['C++', 'CMake', 'Makefile', 'Shell']
+2026-07-12 09:55:12,840 | INFO | Total code calculated | total_bytes=27574
+2026-07-12 09:55:13,340 | INFO | Processing repository | repo=pob-artistryhub
+2026-07-12 09:55:13,340 | INFO | Fetching languages | repo=pob-artistryhub
+2026-07-12 09:55:13,754 | INFO | Percentages calculated | languages=['Java', 'Dockerfile']
+2026-07-12 09:55:13,755 | INFO | Total code calculated | total_bytes=81877
+2026-07-12 09:55:14,255 | INFO | Processing repository | repo=portfolio-website
+2026-07-12 09:55:14,255 | INFO | Fetching languages | repo=portfolio-website
+2026-07-12 09:55:14,654 | INFO | Percentages calculated | languages=['Astro', 'JavaScript']
+2026-07-12 09:55:14,654 | INFO | Total code calculated | total_bytes=4013
+2026-07-12 09:55:15,154 | INFO | Processing repository | repo=python-chess-logger
+2026-07-12 09:55:15,155 | INFO | Fetching languages | repo=python-chess-logger
+2026-07-12 09:55:15,574 | INFO | Percentages calculated | languages=['Python', 'Makefile']
+2026-07-12 09:55:15,575 | INFO | Total code calculated | total_bytes=26175
+2026-07-12 09:55:16,075 | INFO | Processing repository | repo=rust-dynamo-integration
+2026-07-12 09:55:16,075 | INFO | Fetching languages | repo=rust-dynamo-integration
+2026-07-12 09:55:16,480 | INFO | Percentages calculated | languages=['Rust', 'Dockerfile', 'Shell']
+2026-07-12 09:55:16,481 | INFO | Total code calculated | total_bytes=14890
+2026-07-12 09:55:16,981 | INFO | Processing repository | repo=youtube-miner
+2026-07-12 09:55:16,981 | INFO | Fetching languages | repo=youtube-miner
+2026-07-12 09:55:17,390 | INFO | Percentages calculated | languages=['Jupyter Notebook', 'Python', 'Shell']
+2026-07-12 09:55:17,391 | INFO | Total code calculated | total_bytes=1518789
+2026-07-12 09:55:17,891 | INFO | Requesting repositories | user=lukilme page=2
+2026-07-12 09:55:18,254 | INFO | Repositories fetched | count=0 page=2
+2026-07-12 09:55:18,256 | INFO | No additional pages found
+2026-07-12 09:55:18,258 | INFO | File saved | file=data.json repositories=13 total_bytes=2154026
