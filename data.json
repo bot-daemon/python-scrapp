@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 13,
-    "total_code_bytes_all_repos": 2154026,
+    "total_code_bytes_all_repos": 2160012,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -39,12 +39,12 @@
             "name": "extractor-web-crawler",
             "description": "A Django-based web system that allows administrators to register and manage web scraping scripts (rules or small scripts) to extract content from pages.",
             "created_at": "2025-11-20T22:55:33Z",
-            "total_code_bytes": 291343,
+            "total_code_bytes": 297329,
             "languages_percent": {
-                "HTML": 70.5,
-                "Python": 28.71,
-                "JavaScript": 0.4,
-                "Dockerfile": 0.39
+                "HTML": 69.08,
+                "Python": 30.23,
+                "JavaScript": 0.39,
+                "Dockerfile": 0.3
             }
         },
         {
