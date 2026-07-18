@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 14,
-    "total_code_bytes_all_repos": 2252251,
+    "total_code_bytes_all_repos": 2240976,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -82,11 +82,8 @@
             "name": "lukilme",
             "description": "Config files for my GitHub profile. It is also my portfolio and curriculum vitae",
             "created_at": "2024-06-05T23:39:27Z",
-            "total_code_bytes": 11275,
-            "languages_percent": {
-                "CSS": 67.39,
-                "JavaScript": 32.61
-            }
+            "total_code_bytes": 0,
+            "languages_percent": {}
         },
         {
             "name": "mirror-notes",
