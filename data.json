@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 14,
-    "total_code_bytes_all_repos": 2278646,
+    "total_code_bytes_all_repos": 2272586,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -64,11 +64,15 @@
             "name": "iftech-dockersim",
             "description": "",
             "created_at": "2026-07-14T22:56:24Z",
-            "total_code_bytes": 118634,
+            "total_code_bytes": 112574,
             "languages_percent": {
-                "JavaScript": 58.52,
-                "HTML": 24.98,
-                "CSS": 16.51
+                "JavaScript": 62.08,
+                "CSS": 17.39,
+                "HTML": 12.1,
+                "Shell": 4.44,
+                "Python": 2.67,
+                "Dockerfile": 1.06,
+                "Go": 0.25
             }
         },
         {
