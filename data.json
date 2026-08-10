@@ -62,7 +62,7 @@
         },
         {
             "name": "iftech-dockersim",
-            "description": "",
+            "description": "O DockerSim \u00e9 um simulador interativo de Docker criado para rodar diretamente no navegador",
             "created_at": "2026-07-14T22:56:24Z",
             "total_code_bytes": 114317,
             "languages_percent": {
