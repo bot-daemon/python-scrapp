@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 17,
-    "total_code_bytes_all_repos": 2456725,
+    "total_code_bytes_all_repos": 38206280,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -96,10 +96,11 @@
             "name": "love-letter-api",
             "description": "",
             "created_at": "2026-09-07T15:58:17Z",
-            "total_code_bytes": 113664,
+            "total_code_bytes": 35863219,
             "languages_percent": {
-                "Jupyter Notebook": 69.85,
-                "Python": 30.15
+                "HTML": 97.44,
+                "Jupyter Notebook": 2.47,
+                "Python": 0.1
             }
         },
         {
