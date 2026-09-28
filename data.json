@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
-    "total_repositories": 17,
-    "total_code_bytes_all_repos": 3372477,
+    "total_repositories": 18,
+    "total_code_bytes_all_repos": 3373893,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -124,6 +124,13 @@
             }
         },
         {
+            "name": "machine_learning_classes",
+            "description": "",
+            "created_at": "2026-09-28T00:11:18Z",
+            "total_code_bytes": 0,
+            "languages_percent": {}
+        },
+        {
             "name": "mirror-notes",
             "description": "It consists of an audio and video input interceptor, where both are dynamically merged and, through some filters, a \"visual show\" is created. ",
             "created_at": "2026-06-22T12:22:40Z",
@@ -161,10 +168,10 @@
             "name": "python-chess-logger",
             "description": "application that analyzes chess matches using stockfish, generates a report and saves it for future analysis purposes",
             "created_at": "2024-07-20T02:26:00Z",
-            "total_code_bytes": 26175,
+            "total_code_bytes": 27591,
             "languages_percent": {
-                "Python": 97.22,
-                "Makefile": 2.78
+                "Python": 92.23,
+                "Makefile": 7.77
             }
         },
         {
