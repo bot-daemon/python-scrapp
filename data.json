@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 18,
-    "total_code_bytes_all_repos": 3373893,
+    "total_code_bytes_all_repos": 3434133,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -127,8 +127,10 @@
             "name": "machine_learning_classes",
             "description": "",
             "created_at": "2026-09-28T00:11:18Z",
-            "total_code_bytes": 0,
-            "languages_percent": {}
+            "total_code_bytes": 54646,
+            "languages_percent": {
+                "Jupyter Notebook": 100.0
+            }
         },
         {
             "name": "mirror-notes",
@@ -156,12 +158,12 @@
             "name": "portfolio-website",
             "description": "my repository for storing the portfolio file",
             "created_at": "2026-02-09T22:21:48Z",
-            "total_code_bytes": 25625,
+            "total_code_bytes": 31219,
             "languages_percent": {
-                "Astro": 47.52,
-                "TypeScript": 28.52,
-                "CSS": 19.29,
-                "JavaScript": 4.67
+                "Astro": 58.68,
+                "TypeScript": 23.41,
+                "CSS": 14.08,
+                "JavaScript": 3.83
             }
         },
         {
