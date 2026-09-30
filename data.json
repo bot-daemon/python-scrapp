@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 18,
-    "total_code_bytes_all_repos": 3434133,
+    "total_code_bytes_all_repos": 3516786,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -79,10 +79,10 @@
             "name": "java-web-study",
             "description": "Servlets, portlets, and other things already existed before I was born.",
             "created_at": "2026-08-22T00:40:52Z",
-            "total_code_bytes": 1598,
+            "total_code_bytes": 44722,
             "languages_percent": {
-                "Java": 58.14,
-                "Makefile": 41.86
+                "Java": 98.5,
+                "Makefile": 1.5
             }
         },
         {
@@ -158,12 +158,12 @@
             "name": "portfolio-website",
             "description": "my repository for storing the portfolio file",
             "created_at": "2026-02-09T22:21:48Z",
-            "total_code_bytes": 31219,
+            "total_code_bytes": 70748,
             "languages_percent": {
-                "Astro": 58.68,
-                "TypeScript": 23.41,
-                "CSS": 14.08,
-                "JavaScript": 3.83
+                "Astro": 56.12,
+                "TypeScript": 35.97,
+                "CSS": 6.22,
+                "JavaScript": 1.69
             }
         },
         {
