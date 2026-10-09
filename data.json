@@ -1,7 +1,7 @@
 {
     "user": "lukilme",
     "total_repositories": 18,
-    "total_code_bytes_all_repos": 3517439,
+    "total_code_bytes_all_repos": 2485801,
     "repositories": [
         {
             "name": "big-data-analysis-cluster",
@@ -79,10 +79,10 @@
             "name": "java-web-study",
             "description": "Servlets, portlets, and other things already existed before I was born. A simple service created as a learning tool to accommodate different functionalities.",
             "created_at": "2026-08-22T00:40:52Z",
-            "total_code_bytes": 45375,
+            "total_code_bytes": 28664,
             "languages_percent": {
-                "Java": 98.53,
-                "Makefile": 1.47
+                "Java": 97.67,
+                "Makefile": 2.33
             }
         },
         {
@@ -91,16 +91,6 @@
             "created_at": "2025-11-18T19:16:54Z",
             "total_code_bytes": 0,
             "languages_percent": {}
-        },
-        {
-            "name": "love-letter-api",
-            "description": "",
-            "created_at": "2026-09-07T15:58:17Z",
-            "total_code_bytes": 1029151,
-            "languages_percent": {
-                "Jupyter Notebook": 96.76,
-                "Python": 3.24
-            }
         },
         {
             "name": "love-letter-web",
@@ -170,10 +160,10 @@
             "name": "python-chess-logger",
             "description": "application that analyzes chess matches using stockfish, generates a report and saves it for future analysis purposes",
             "created_at": "2024-07-20T02:26:00Z",
-            "total_code_bytes": 27591,
+            "total_code_bytes": 33845,
             "languages_percent": {
-                "Python": 92.23,
-                "Makefile": 7.77
+                "Python": 93.67,
+                "Makefile": 6.33
             }
         },
         {
@@ -185,6 +175,15 @@
                 "Rust": 95.18,
                 "Dockerfile": 3.78,
                 "Shell": 1.04
+            }
+        },
+        {
+            "name": "social-media-bot-integration",
+            "description": "",
+            "created_at": "2026-10-08T16:03:22Z",
+            "total_code_bytes": 7970,
+            "languages_percent": {
+                "Python": 100.0
             }
         },
         {
