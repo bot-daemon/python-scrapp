@@ -1,20 +1,18 @@
 from __future__ import annotations
 
-import math
 import os
 import random
-from dataclasses import dataclass, field
-from typing import Callable
 
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageFont
+
 from .gif_canvas import GifCanvas
 
+
 def save_gif(
-    path:   str,
+    path: str,
     frames: list[Image.Image],
-    duration: int  = 80,
-    loop:     int  = 0,
+    duration: int = 80,
+    loop: int = 0,
     hold_last: int = 8,
     canvas: GifCanvas | None = None,
     glitch_hold: bool = True,
@@ -37,7 +35,8 @@ def save_gif(
         duration=duration,
     )
     print(f"{path}  ({len(all_frames)} frames)")
-    
+
+
 def load_fonts() -> dict:
     paths = [
         "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf",
@@ -45,7 +44,7 @@ def load_fonts() -> dict:
         "/System/Library/Fonts/Menlo.ttc",
     ]
     bold = next((p for p in paths[::2] if os.path.exists(p)), None)
-    reg  = next((p for p in paths[1::2] if os.path.exists(p)), None) or bold
+    reg = next((p for p in paths[1::2] if os.path.exists(p)), None) or bold
 
     def _f(path, size):
         try:
@@ -54,7 +53,7 @@ def load_fonts() -> dict:
             return ImageFont.load_default()
 
     return {
-        "big":   _f(bold, 18),
-        "med":   _f(bold, 13),
-        "small": _f(reg,  11),
+        "big": _f(bold, 18),
+        "med": _f(bold, 13),
+        "small": _f(reg, 11),
     }

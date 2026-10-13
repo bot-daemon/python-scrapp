@@ -1,70 +1,86 @@
-
-import math
-import os
 import random
-from dataclasses import dataclass, field
-from typing import Callable
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
-from .gif_canvas import GifCanvas
+
+from PIL import Image
+
 from .constants import Palette
+from .gif_canvas import GifCanvas
 from .util import save_gif
 
+
 def make_radar_gif(
-    labels:   list[str],
-    values:   list[float],
-    title:    str  = ">> RADAR CHART",
-    subtitle: str  = "",
-    footer:   str  = "",
-    color:    tuple | None = None,
-    out_path: str  = "radar.gif",
-    n_frames: int  = 40,
+    labels: list[str],
+    values: list[float],
+    title: str = ">> LANGUAGES RADAR",
+    subtitle: str = "",
+    footer: str = "",
+    color: tuple | None = None,
+    out_path: str = "radar.gif",
+    n_frames: int = 40,
     glitch_frames: list[int] | None = None,
     canvas: GifCanvas | None = None,
-    FONTS: dict = {}
+    FONTS: dict = {},
 ) -> list[Image.Image]:
     canvas = canvas or GifCanvas(fonts=FONTS)
     glitch_frames = glitch_frames or [8, 16, 24, 32]
-    color   = color or Palette.for_lang(labels[0] if labels else "radar", 0)
+    color = color or Palette.MAGENTA
     max_val = max(values) if values else 1
-    cx, cy  = 210, 200
-    R       = 140
-    n       = len(values)
-    frames  = []
+    ox, oy = 60, 90
+    bar_w = 340
+    bar_h = 24
+    gap = 44
+    frames = []
     for f in range(n_frames):
-        fr   = canvas.new_frame()
-        prog = min(1.0, f / (n_frames * 0.6))
+        fr = canvas.new_frame()
+        prog = min(1.0, f / (n_frames * 0.7))
         canvas.draw_header(fr.draw, title, subtitle)
-        # grid rings + axes
-        for ring in (0.25, 0.5, 0.75, 1.0):
-            ring_pts = [
-                (
-                    cx + math.cos(2 * math.pi * i / n - math.pi / 2) * R * ring,
-                    cy + math.sin(2 * math.pi * i / n - math.pi / 2) * R * ring,
-                )
-                for i in range(n)
-            ]
-            fr.draw.polygon(ring_pts, outline=Palette.GRID)
-        for i in range(n):
-            ax = cx + math.cos(2 * math.pi * i / n - math.pi / 2) * R
-            ay = cy + math.sin(2 * math.pi * i / n - math.pi / 2) * R
-            fr.draw.line([cx, cy, ax, ay], fill=Palette.GRID)
-            lx = cx + math.cos(2 * math.pi * i / n - math.pi / 2) * (R + 20)
-            ly = cy + math.sin(2 * math.pi * i / n - math.pi / 2) * (R + 20)
-            fr.draw.text((lx - 20, ly - 6), labels[i][:10], font=FONTS["small"], fill=Palette.WHITE)
-        wobble = random.randint(-2, 2) if f % 6 == 0 else 0
-        poly_pts = [
-            (
-                cx + math.cos(2 * math.pi * i / n - math.pi / 2) * R * (values[i] / max_val) * prog + wobble,
-                cy + math.sin(2 * math.pi * i / n - math.pi / 2) * R * (values[i] / max_val) * prog + wobble,
+        y = oy
+        for i, (lbl, val) in enumerate(zip(labels, values)):
+            wobble = random.randint(-1, 1) if f % 6 == 0 else 0
+            fill_w = max(0.0, (val / max_val) * bar_w * prog)
+            fill_end = max(ox, ox + fill_w + wobble)
+            fr.draw.rectangle([ox, y, ox + bar_w, y + bar_h], outline=Palette.GRID)
+            fr.draw.rectangle(
+                [ox, y, fill_end, y + bar_h],
+                fill=tuple(max(0, c - 60) for c in color),
             )
-            for i in range(n)
-        ]
-        if len(poly_pts) > 2:
-            fr.draw.polygon(poly_pts, fill=tuple(max(0, c - 90) for c in color), outline=color)
-        for x, y in poly_pts:
-            fr.draw.ellipse([x - 3, y - 3, x + 3, y + 3], fill=color)
+            fr.draw.text((ox, y - 16), lbl[:16], font=FONTS["small"], fill=Palette.WHITE)
+            if prog > 0.5:
+                fr.draw.text(
+                    (ox + bar_w + 10, y + 3),
+                    f"{val:.0f}",
+                    font=FONTS["small"],
+                    fill=color,
+                )
+            y += gap
         canvas.draw_footer(fr.draw, footer)
         frames.append(canvas.finish_frame(fr, glitch=(f in glitch_frames)))
     save_gif(out_path, frames, canvas=canvas)
     return frames
+
+
+def make_progress_race_gif(
+    labels: list[str],
+    values: list[float],
+    title: str = ">> PROGRESS RACE",
+    subtitle: str = "",
+    footer: str = "",
+    colors: list | None = None,
+    out_path: str = "progress.gif",
+    n_frames: int = 40,
+    glitch_frames: list[int] | None = None,
+    canvas: GifCanvas | None = None,
+    FONTS: dict = {},
+) -> list[Image.Image]:
+    return make_radar_gif(
+        labels=labels,
+        values=values,
+        title=title,
+        subtitle=subtitle,
+        footer=footer,
+        color=colors[0] if colors else Palette.MAGENTA,
+        out_path=out_path,
+        n_frames=n_frames,
+        glitch_frames=glitch_frames,
+        canvas=canvas,
+        FONTS=FONTS,
+    )

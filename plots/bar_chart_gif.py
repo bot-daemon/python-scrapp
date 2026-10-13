@@ -1,14 +1,9 @@
 from __future__ import annotations
-import math
-import os
-import random
-from dataclasses import dataclass, field
-from typing import Callable
 
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
-from .gif_canvas import GifCanvas
+from PIL import Image
+
 from .constants import Palette
+from .gif_canvas import GifCanvas
 from .util import save_gif
 
 

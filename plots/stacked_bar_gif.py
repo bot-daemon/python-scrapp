@@ -1,15 +1,13 @@
 from __future__ import annotations
-import math
-import os
-import random
-from dataclasses import dataclass, field
-from typing import Callable
 
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
-from .gif_canvas import GifCanvas
+import random
+
+from PIL import Image
+
 from .constants import Palette
+from .gif_canvas import GifCanvas
 from .util import save_gif
+
 
 def make_stacked_bar_gif(
     categories: list[str],
@@ -23,7 +21,7 @@ def make_stacked_bar_gif(
     n_frames: int = 40,
     glitch_frames: list[int] | None = None,
     canvas: GifCanvas | None = None,
-    FONTS: dict = {}
+    FONTS: dict = {},
 ) -> list[Image.Image]:
 
     canvas = canvas or GifCanvas(fonts=FONTS)
@@ -70,7 +68,7 @@ def make_stacked_bar_gif(
         return [fit_text(draw, line1, font, max_width), line2]
 
     def paginate(items, page_size):
-        return [items[i:i + page_size] for i in range(0, len(items), page_size)]
+        return [items[i : i + page_size] for i in range(0, len(items), page_size)]
 
     n_cats = len(categories)
     if n_cats == 0:
@@ -111,7 +109,12 @@ def make_stacked_bar_gif(
         for j, grp in enumerate(groups):
             swatch_w = 10
             txt = grp
-            item_w = swatch_w + 6 + text_width(canvas.new_frame().draw, txt, legend_font) + item_gap
+            item_w = (
+                swatch_w
+                + 6
+                + text_width(canvas.new_frame().draw, txt, legend_font)
+                + item_gap
+            )
             if cur_row and cur_w + item_w > max_legend_w:
                 legend_rows.append(cur_row)
                 cur_row = []
@@ -127,7 +130,9 @@ def make_stacked_bar_gif(
         chart_h = y_base - header_h
 
         totals = [sum(row) or 1 for row in page_matrix]
-        normed = [[v / totals[i] * 100 for v in row] for i, row in enumerate(page_matrix)]
+        normed = [
+            [v / totals[i] * 100 for v in row] for i, row in enumerate(page_matrix)
+        ]
 
         for f in range(n_frames):
             fr = canvas.new_frame()
@@ -140,13 +145,19 @@ def make_stacked_bar_gif(
 
             canvas.draw_header(fr.draw, title, page_subtitle)
 
-            fr.draw.line([(x0 - 6, header_h - 5), (x0 - 6, y_base)], fill=Palette.WHITE, width=2)
-            fr.draw.line([(x0 - 6, y_base), (canvas.W - 20, y_base)], fill=Palette.WHITE, width=2)
+            fr.draw.line(
+                [(x0 - 6, header_h - 5), (x0 - 6, y_base)], fill=Palette.WHITE, width=2
+            )
+            fr.draw.line(
+                [(x0 - 6, y_base), (canvas.W - 20, y_base)], fill=Palette.WHITE, width=2
+            )
 
             for pct_lbl in [0, 25, 50, 75, 100]:
                 yy = y_base - int(chart_h * pct_lbl / 100)
                 fr.draw.line([(x0 - 10, yy), (x0 - 6, yy)], fill=Palette.WHITE)
-                fr.draw.text((4, yy - 6), f"{pct_lbl}%", font=FONTS["small"], fill=Palette.WHITE)
+                fr.draw.text(
+                    (4, yy - 6), f"{pct_lbl}%", font=FONTS["small"], fill=Palette.WHITE
+                )
 
             for i, (cat, row) in enumerate(zip(page_categories, normed)):
                 bx = x0 + i * (bar_w + gap)
@@ -161,9 +172,13 @@ def make_stacked_bar_gif(
 
                     for by in range(0, seg_h, 6):
                         shade = tuple(max(0, c - random.randint(0, 40)) for c in col)
-                        fr.draw.rectangle([bx, y_cur - by - 6, bx + bar_w, y_cur - by], fill=shade)
+                        fr.draw.rectangle(
+                            [bx, y_cur - by - 6, bx + bar_w, y_cur - by], fill=shade
+                        )
 
-                    fr.draw.rectangle([bx, y_cur - seg_h, bx + bar_w, y_cur], outline=col, width=1)
+                    fr.draw.rectangle(
+                        [bx, y_cur - seg_h, bx + bar_w, y_cur], outline=col, width=1
+                    )
                     y_cur -= seg_h
 
                 max_label_w = bar_w + 10
@@ -172,14 +187,38 @@ def make_stacked_bar_gif(
                     lines = lines[:2]
 
                 if len(lines) == 1:
-                    tx = bx + (bar_w // 2) - (text_width(fr.draw, lines[0], FONTS["small"]) // 2)
-                    fr.draw.text((tx, y_base + 4), lines[0], font=FONTS["small"], fill=Palette.CYAN)
+                    tx = (
+                        bx
+                        + (bar_w // 2)
+                        - (text_width(fr.draw, lines[0], FONTS["small"]) // 2)
+                    )
+                    fr.draw.text(
+                        (tx, y_base + 4),
+                        lines[0],
+                        font=FONTS["small"],
+                        fill=Palette.CYAN,
+                    )
                 else:
                     line1, line2 = lines[0], lines[1]
-                    tx1 = bx + (bar_w // 2) - (text_width(fr.draw, line1, FONTS["small"]) // 2)
-                    tx2 = bx + (bar_w // 2) - (text_width(fr.draw, line2, FONTS["small"]) // 2)
-                    fr.draw.text((tx1, y_base + 2), line1, font=FONTS["small"], fill=Palette.CYAN)
-                    fr.draw.text((tx2, y_base + 13), line2, font=FONTS["small"], fill=Palette.CYAN)
+                    tx1 = (
+                        bx
+                        + (bar_w // 2)
+                        - (text_width(fr.draw, line1, FONTS["small"]) // 2)
+                    )
+                    tx2 = (
+                        bx
+                        + (bar_w // 2)
+                        - (text_width(fr.draw, line2, FONTS["small"]) // 2)
+                    )
+                    fr.draw.text(
+                        (tx1, y_base + 2), line1, font=FONTS["small"], fill=Palette.CYAN
+                    )
+                    fr.draw.text(
+                        (tx2, y_base + 13),
+                        line2,
+                        font=FONTS["small"],
+                        fill=Palette.CYAN,
+                    )
 
             ly = canvas.H - footer_h - legend_h + 2
             row_x = 20
