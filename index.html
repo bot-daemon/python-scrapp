@@ -1,239 +1,255 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de GIFs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: {
-                            900: '#1a1a2e',
-                            800: '#16213e',
-                            700: '#0f3460',
-                        },
-                        accent: {
-                            DEFAULT: '#e94560',
-                            light: '#ff6b81',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile GIF Control Panel</title>
     <style>
-        .modal-enter {
-            opacity: 0;
-            transform: scale(0.9);
+        :root {
+            --bg: #0b1020;
+            --panel: #121a2b;
+            --panel-alt: #1a2438;
+            --line: #2d3a52;
+            --text: #eaf2ff;
+            --muted: #a9b7d0;
+            --accent: #64d2ff;
+            --accent-2: #8b5cf6;
+            --success: #34d399;
+            --warning: #fbbf24;
         }
-        .modal-enter-active {
-            opacity: 1;
-            transform: scale(1);
-            transition: all 0.3s ease-out;
+
+        * {
+            box-sizing: border-box;
         }
-        
-        body.modal-open {
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #0b1020 0%, #111827 100%);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+        }
+
+        .badge {
+            background: rgba(100, 210, 255, 0.14);
+            border: 1px solid rgba(100, 210, 255, 0.4);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(18, 26, 43, 0.9);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        .stat {
+            font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .section-title {
+            margin: 28px 0 16px;
+            font-size: 1.35rem;
+        }
+
+        .gif-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .gif-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
             overflow: hidden;
+        }
+
+        .gif-card img {
+            width: 100%;
+            display: block;
+            background: #0a1222;
+            min-height: 180px;
+            object-fit: contain;
+        }
+
+        .gif-card .meta {
+            padding: 14px 16px 18px;
+        }
+
+        .gif-card h3 {
+            margin: 0 0 4px;
+            font-size: 1rem;
+        }
+
+        .gif-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .json-panel {
+            background: var(--panel-alt);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px;
+            overflow: auto;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #dfeaff;
+            font-size: 0.86rem;
+            line-height: 1.6;
+        }
+
+        .loading {
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-top: 22px;
+            }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-700 min-h-screen">
-    
-    <div class="max-w-7xl mx-auto px-4 py-8 md:py-12">
-        
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-accent mb-4 tracking-wider drop-shadow-lg">
-                Galeria de Visualizações
-            </h1>
-            <p class="text-gray-400 text-lg">Animações e gráficos interativos</p>
-            <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full opacity-50"></div>
-        </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/all_langs_merged.gif', 'Linguagens Mescladas', '52 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/all_langs_merged.gif" 
-                         alt="Linguagens mescladas" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Linguagens Mescladas</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">52 frames</span>
-                </div>
+
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>GitHub Profile GIF Control Panel</h1>
             </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/total_bytes_gauge.gif', 'Medidor Total de Bytes', '48 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/total_bytes_gauge.gif" 
-                         alt="Medidor de bytes" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Medidor Total de Bytes</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/langs_radar.gif', 'Radar de Linguagens', '48 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/langs_radar.gif" 
-                         alt="Radar de linguagens" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Radar de Linguagens</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/bytes_line_v2.gif', 'Linha de Bytes (v2)', '48 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/bytes_line_v2.gif" 
-                         alt="Linha de bytes v2" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Linha de Bytes (v2)</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/repo_sizes_v2.gif', 'Tamanhos de Repositório (v2)', '48 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/repo_sizes_v2.gif" 
-                         alt="Tamanhos de repositório v2" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Tamanhos de Repositório (v2)</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/repo_sizes.gif', 'Tamanhos de Repositório', '44 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/repo_sizes.gif" 
-                         alt="Tamanhos de repositório" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Tamanhos de Repositório</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">44 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/language_pie.gif', 'Gráfico de Linguagens', '48 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/language_pie.gif" 
-                         alt="Gráfico de pizza" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Gráfico de Linguagens</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/stacked_langs.gif', 'Linguagens Empilhadas', '168 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/stacked_langs.gif" 
-                         alt="Linguagens empilhadas" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Linguagens Empilhadas</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">168 frames</span>
-                </div>
-            </div>
-            
-            <div class="group bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1 cursor-pointer"
-                 onclick="openModal('imgs/bytes_line.gif', 'Linha de Bytes', '48 frames')">
-                <div class="relative overflow-hidden rounded-xl mb-4">
-                    <img src="imgs/bytes_line.gif" 
-                         alt="Linha de bytes" 
-                         class="w-full h-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-all duration-300 rounded-xl"></div>
-                </div>
-                <div class="flex items-center justify-between pt-3 border-t border-white/10">
-                    <span class="text-accent font-semibold text-sm truncate mr-2">Linha de Bytes</span>
-                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap">48 frames</span>
-                </div>
-            </div>
-            
-        </div>
+            <div class="badge">Monitor de geração</div>
+        </header>
+
+        <section class="summary-grid" id="summary"></section>
+
+        <h2 class="section-title">GIFs gerados</h2>
+        <section class="gif-grid" id="gifGrid"></section>
+
+        <h2 class="section-title">JSON gerado</h2>
+        <section class="json-panel">
+            <pre id="jsonOutput" class="loading">Carregando dados...</pre>
+        </section>
     </div>
-    
-    <div id="modal" 
-         class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 opacity-0 transition-opacity duration-300"
-         onclick="closeModal()">
-        
-        <div id="modal-content" 
-             class="relative max-w-5xl w-full bg-gradient-to-br from-gray-900 to-dark-800 rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform scale-90 transition-transform duration-300"
-             onclick="event.stopPropagation()">
-            
-            <div class="flex items-center justify-between p-4 md:p-6 border-b border-white/10">
-                <div>
-                    <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-accent"></h3>
-                    <p id="modal-frames" class="text-gray-400 text-sm mt-1"></p>
-                </div>
-                <button onclick="closeModal()" 
-                        class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
-                        aria-label="Fechar modal">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+
+    <script>
+        const gifFiles = [
+            { file: 'assets/gifs/repo_sizes.gif', title: 'Tamanho dos repositórios', description: 'Comparativo de tamanho por repositório' },
+            { file: 'assets/gifs/language_pie.gif', title: 'Distribuição por linguagem', description: 'Breakdown de linguagem do repositório principal' },
+            { file: 'assets/gifs/all_langs_merged.gif', title: 'Linguagens em todos os repositórios', description: 'Visão conjunta de todas as linguagens' },
+            { file: 'assets/gifs/stacked_langs.gif', title: 'Stack por repositório', description: 'Comparativo de linguagens por projeto' },
+            { file: 'assets/gifs/bytes_line.gif', title: 'Bytes por repositório', description: 'Evolução do uso de bytes' },
+            { file: 'assets/gifs/langs_radar.gif', title: 'Radar de linguagens', description: 'Resumo visual das linguagens' },
+            { file: 'assets/gifs/repo_sizes_v2.gif', title: 'Versão alternada do gráfico', description: 'Visualização alternativa de repos' },
+            { file: 'assets/gifs/bytes_line_v2.gif', title: 'Linha de bytes v2', description: 'Gráfico alternativo da série temporal' },
+            { file: 'assets/gifs/total_bytes_gauge.gif', title: 'Gauge total', description: 'Indicador do total geral de bytes' }
+        ];
+
+        const summaryEl = document.getElementById('summary');
+        const gifGridEl = document.getElementById('gifGrid');
+        const jsonOutputEl = document.getElementById('jsonOutput');
+
+        function renderSummary(data) {
+            const cards = [
+                { label: 'Usuário', value: data.user || 'N/A' },
+                { label: 'Repositórios', value: data.total_repositories ?? 0 },
+                { label: 'Total de bytes', value: new Intl.NumberFormat('en-US').format(data.total_code_bytes_all_repos ?? 0) },
+                { label: 'Arquivos GIF', value: gifFiles.length }
+            ];
+
+            summaryEl.innerHTML = cards.map(item => `
+          <article class="card">
+            <h2>${item.label}</h2>
+            <p class="stat">${item.value}</p>
+          </article>
+        `).join('');
+        }
+
+        function renderGifs() {
+            gifGridEl.innerHTML = gifFiles.map(gif => `
+          <article class="gif-card">
+            <img src="${gif.file}" alt="${gif.title}" />
+            <div class="meta">
+              <h3>${gif.title}</h3>
+              <p>${gif.description}</p>
             </div>
-            
-            <div class="p-4 md:p-6 flex items-center justify-center bg-black/30">
-                <img id="modal-image" 
-                     src="" 
-                     alt="" 
-                     class="max-w-full max-h-[70vh] rounded-xl shadow-lg">
-            </div>
-            
-            <div class="p-4 md:p-6 border-t border-white/10 flex justify-between items-center">
-                <span class="text-gray-400 text-sm">Clique fora da imagem para fechar</span>
-                <button onclick="closeModal()"
-                        class="bg-accent hover:bg-accent-light text-white px-6 py-2 rounded-full font-medium transition-colors duration-300">
-                    Fechar
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <script src="/main.js">
-        
+          </article>
+        `).join('');
+        }
+
+        async function loadJson() {
+            try {
+                const response = await fetch('data/github_profile.json');
+                if (!response.ok) throw new Error('JSON não encontrado');
+                const data = await response.json();
+                renderSummary(data);
+                jsonOutputEl.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                jsonOutputEl.textContent = `Erro ao carregar o JSON: ${error.message}\n\nVerifique se o arquivo data/github_profile.json foi gerado antes de abrir esta página.`;
+                summaryEl.innerHTML = `
+            <article class="card">
+              <h2>Status</h2>
+              <p class="stat">Sem dados</p>
+            </article>
+          `;
+            }
+        }
+
+        renderGifs();
+        loadJson();
     </script>
-    
 </body>
+
 </html>
